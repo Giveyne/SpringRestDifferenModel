@@ -1,0 +1,2 @@
+Insert INTO CAR
+VALUES (1, 'AUDI', 'TT', 300, 1921);
