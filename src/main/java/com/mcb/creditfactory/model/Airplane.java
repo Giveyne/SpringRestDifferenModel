@@ -29,6 +29,6 @@ public class Airplane {
     private Integer fuelCapacity;
     private Integer seats;
 
-    @OneToMany(mappedBy = "airplane")
+    @OneToMany(mappedBy = "airplane", cascade = CascadeType.ALL)
     private List<AssessedValue> values = new ArrayList<>();
 }

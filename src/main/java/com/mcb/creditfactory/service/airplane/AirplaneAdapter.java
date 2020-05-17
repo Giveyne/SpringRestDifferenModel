@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
 
 @AllArgsConstructor
@@ -17,8 +18,9 @@ public class AirplaneAdapter implements CollateralObject {
 
     @Override
     public BigDecimal getValue() {
-        List<AssessedValue> values = (List)airplane.getValues();
-        return values.get(values.size()-1).getValue(); }
+        List <AssessedValue> values = (List) airplane.getValues();
+        return  values.stream().max(Comparator.comparing(AssessedValue::getDate)).get().getValue();
+    }
 
     @Override
     public Short getYear() {

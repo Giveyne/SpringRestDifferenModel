@@ -20,11 +20,13 @@ public class AirplaneServiceImpl implements AirplaneService {
 
     @Override
     public boolean approve(AirplaneDto dto) {
+
         return approveService.approve(new AirplaneAdapter(dto)) == 0;
     }
 
     @Override
     public Airplane save(Airplane airplane) {
+        airplane.getValues().forEach(v -> v.setAirplane(airplane));
         return airplaneRepository.save(airplane);
     }
 
@@ -64,5 +66,10 @@ public class AirplaneServiceImpl implements AirplaneService {
     @Override
     public Long getId(Airplane airplane) {
         return airplane.getId();
+    }
+
+    @Override
+    public Class<AirplaneDto> getDtoClass() {
+        return AirplaneDto.class;
     }
 }

@@ -25,6 +25,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car save(Car car) {
+        car.getValues().forEach(v -> v.setCar(car));
         return carRepository.save(car);
     }
 
@@ -60,5 +61,10 @@ public class CarServiceImpl implements CarService {
     @Override
     public Long getId(Car car) {
         return car.getId();
+    }
+
+    @Override
+    public Class<CarDto> getDtoClass() {
+        return CarDto.class;
     }
 }

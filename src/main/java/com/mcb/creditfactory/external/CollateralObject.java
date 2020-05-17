@@ -1,5 +1,7 @@
 package com.mcb.creditfactory.external;
 
+import com.mcb.creditfactory.dto.Collateral;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -9,4 +11,5 @@ public interface CollateralObject {
     Short getYear();
     LocalDate getDate();
     CollateralType getType();
+
 }

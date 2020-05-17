@@ -1,5 +1,7 @@
 package com.mcb.creditfactory.dto;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.mcb.creditfactory.model.AssessedValue;
 import lombok.AllArgsConstructor;
