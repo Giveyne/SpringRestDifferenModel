@@ -5,6 +5,8 @@ import com.mcb.creditfactory.model.AssessedValue;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -18,5 +20,5 @@ public class CarDto implements Collateral {
     private String model;
     private Double power;
     private Short year;
-    private Set<AssessedValue> values;
+    private List<AssessedValue> values;
 }

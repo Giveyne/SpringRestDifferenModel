@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 // TODO: reimplement this
-@Service
+
 public class CollateralServiceCarImpl implements CollateralService{
 
     @Autowired

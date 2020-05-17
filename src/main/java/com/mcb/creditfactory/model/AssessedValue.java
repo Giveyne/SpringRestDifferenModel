@@ -1,5 +1,6 @@
 package com.mcb.creditfactory.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,9 +28,11 @@ public class AssessedValue {
 
     @ManyToOne
     @JoinColumn(name = "car_id")
+    @JsonIgnore
     private Car car;
 
     @ManyToOne
     @JoinColumn(name = "airplane_id")
+    @JsonIgnore
     private Airplane airplane;
 }
