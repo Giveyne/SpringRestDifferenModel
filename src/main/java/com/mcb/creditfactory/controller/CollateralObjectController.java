@@ -1,7 +1,8 @@
 package com.mcb.creditfactory.controller;
 
 import com.mcb.creditfactory.dto.Collateral;
-import com.mcb.creditfactory.service.CollateralServiceImpl;
+import com.mcb.creditfactory.service.CollateralService;
+import com.mcb.creditfactory.service.CollateralServiceAirplaneImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
@@ -11,8 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CollateralObjectController {
+
     @Autowired
-    private CollateralServiceImpl service;
+    private CollateralService service;
+
+    @Autowired
+    CollateralServiceAirplaneImpl collateralServiceAirplane;
 
     @PostMapping("/collateral/save")
     public HttpEntity<Long> save(@RequestBody Collateral object) {

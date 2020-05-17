@@ -1,0 +1,13 @@
+POST http://localhost:807/collateral/save
+Content-Type: application/json
+
+{
+  "id" : "2",
+  "brand": "Audi",
+  "model": "Q5",
+   "power": "325.5D",
+   "year" : "2020"
+
+}
+
+###

@@ -1,0 +1,11 @@
+POST http://localhost:807/collateral/info
+Content-Type: application/json
+
+{
+  "type": "car",
+  "id": 1
+
+}
+
+###
+

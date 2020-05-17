@@ -10,12 +10,13 @@ import java.util.Optional;
 
 // TODO: reimplement this
 @Service
-public class CollateralServiceImpl {
+public class CollateralServiceCarImpl implements CollateralService{
 
     @Autowired
     private CarService carService;
 
     @SuppressWarnings("ConstantConditions")
+    @Override
     public Long saveCollateral(Collateral object) {
         if (!(object instanceof CarDto)) {
             throw new IllegalArgumentException();
@@ -33,7 +34,7 @@ public class CollateralServiceImpl {
                 .map(carService::getId)
                 .orElse(null);
     }
-
+    @Override
     public Collateral getInfo(Collateral object) {
         if (!(object instanceof CarDto)) {
             throw new IllegalArgumentException();

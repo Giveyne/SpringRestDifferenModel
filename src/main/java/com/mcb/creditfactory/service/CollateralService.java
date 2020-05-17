@@ -1,7 +1,11 @@
 package com.mcb.creditfactory.service;
 
 import com.mcb.creditfactory.dto.Collateral;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public interface CollateralService {
-    Collateral
+
+    Long saveCollateral(Collateral collateral);
+
+    Collateral getInfo(Collateral collateral);
 }
