@@ -1,7 +1,7 @@
 package com.mcb.creditfactory.service.car;
 
 import com.mcb.creditfactory.dto.CarDto;
-import com.mcb.creditfactory.external.ExternalApprove;
+import com.mcb.creditfactory.external.CarExternalApproveService;
 import com.mcb.creditfactory.model.Car;
 import com.mcb.creditfactory.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.Optional;
 public class CarServiceImpl implements CarService {
 
     @Autowired
-    private ExternalApprove approveService;
+    private CarExternalApproveService approveService;
 
     @Autowired
     private CarRepository carRepository;

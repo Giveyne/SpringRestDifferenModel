@@ -1,7 +1,7 @@
 package com.mcb.creditfactory.service.airplane;
 
 import com.mcb.creditfactory.dto.AirplaneDto;
-import com.mcb.creditfactory.external.ExternalApprove;
+import com.mcb.creditfactory.external.AirplaneExternalApproveService;
 import com.mcb.creditfactory.model.Airplane;
 import com.mcb.creditfactory.repository.AirplaneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import java.util.Optional;
 public class AirplaneServiceImpl implements AirplaneService {
 
     @Autowired
-    private ExternalApprove approveService;
+    private AirplaneExternalApproveService approveService;
 
     @Autowired
     private AirplaneRepository airplaneRepository;

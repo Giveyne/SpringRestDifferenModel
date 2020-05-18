@@ -2,7 +2,6 @@ package com.mcb.creditfactory.dto;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.mcb.creditfactory.model.AssessedValueAirplane;
-import com.mcb.creditfactory.model.AssessedValueCar;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

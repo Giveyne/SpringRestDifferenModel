@@ -1,18 +1,22 @@
 package com.mcb.creditfactory.external;
 
+import com.mcb.creditfactory.service.airplane.AirplaneAdapter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
 
 @Service
-public class ExternalApproveAirplaneService {
+@Slf4j
+public class AirplaneExternalApproveService implements ExternalApproveService<AirplaneAdapter> {
+
     private static final LocalDate MIN_ASSESS_DATE = LocalDate.of(2017, Month.OCTOBER, 1);
     private static final int MIN_PLANE_YEAR = 1991;
     private static final BigDecimal MIN_PLANE_VALUE = BigDecimal.valueOf(230000000);
 
-
-    protected int approvePlane(CollateralObject object) {
+    @Override
+    public int approve(AirplaneAdapter object) {
         if (object.getYear() < MIN_PLANE_YEAR) {
             return -20;
         }
