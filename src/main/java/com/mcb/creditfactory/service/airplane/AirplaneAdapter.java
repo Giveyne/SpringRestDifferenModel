@@ -4,9 +4,7 @@ import com.mcb.creditfactory.dto.AirplaneDto;
 import com.mcb.creditfactory.external.CollateralObject;
 import com.mcb.creditfactory.external.CollateralType;
 import com.mcb.creditfactory.model.AssessedValueAirplane;
-import com.mcb.creditfactory.model.AssessedValueCar;
 import lombok.AllArgsConstructor;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Comparator;
@@ -34,8 +32,10 @@ public class AirplaneAdapter implements CollateralObject {
 
     @Override
     public LocalDate getDate() {
-        // Для автомобилей дата оценки не используется, поэтому всегда берем текущую
-        return LocalDate.now();
+        return airplane.getAirplaneValues().stream()
+                .max(Comparator.comparing(AssessedValueAirplane::getAssessedDate))
+                .map(AssessedValueAirplane::getAssessedDate)
+                .get();
     }
 
     @Override

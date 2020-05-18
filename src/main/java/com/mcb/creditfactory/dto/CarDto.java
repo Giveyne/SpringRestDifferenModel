@@ -5,7 +5,6 @@ import com.mcb.creditfactory.model.AssessedValueCar;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.List;
 
 @Data
@@ -13,7 +12,6 @@ import java.util.List;
 @AllArgsConstructor
 @JsonTypeName("car")
 public class CarDto implements Collateral {
-    // Обьет приходит из вне в БД или считывается из БД
     private Long id;
     private String brand;
     private String model;
