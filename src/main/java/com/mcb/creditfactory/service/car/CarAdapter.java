@@ -3,7 +3,6 @@ package com.mcb.creditfactory.service.car;
 
 import com.mcb.creditfactory.dto.CarDto;
 import com.mcb.creditfactory.external.CollateralObject;
-import com.mcb.creditfactory.external.CollateralType;
 import com.mcb.creditfactory.model.AssessedValueCar;
 import lombok.AllArgsConstructor;
 import java.math.BigDecimal;
@@ -37,9 +36,5 @@ public class CarAdapter implements CollateralObject {
         return LocalDate.now();
     }
 
-    @Override
-    public CollateralType getType() {
-        return CollateralType.CAR;
-    }
 }
 

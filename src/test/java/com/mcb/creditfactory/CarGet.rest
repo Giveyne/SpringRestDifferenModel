@@ -2,7 +2,7 @@ POST http://localhost:807/collateral/info
 Content-Type: application/json
 
 {
-  "type": "airplane",
+  "type": "car",
   "id": 1
 
 }

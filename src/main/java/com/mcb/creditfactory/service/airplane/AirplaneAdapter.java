@@ -2,7 +2,6 @@ package com.mcb.creditfactory.service.airplane;
 
 import com.mcb.creditfactory.dto.AirplaneDto;
 import com.mcb.creditfactory.external.CollateralObject;
-import com.mcb.creditfactory.external.CollateralType;
 import com.mcb.creditfactory.model.AssessedValueAirplane;
 import lombok.AllArgsConstructor;
 import java.math.BigDecimal;
@@ -38,8 +37,4 @@ public class AirplaneAdapter implements CollateralObject {
                 .get();
     }
 
-    @Override
-    public CollateralType getType() {
-        return CollateralType.AIRPLANE;
-    }
 }
