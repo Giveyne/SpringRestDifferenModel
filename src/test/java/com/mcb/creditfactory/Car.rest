@@ -3,15 +3,14 @@ Content-Type: application/json
 
 {
   "type": "airplane",
-  "id": 2,
   "brand": "Aerobus",
   "model": "A300",
   "manufacturer": "Euro",
   "year": 2020,
   "fuelCapacity": 33,
   "seats": 200,
-  "values": [{"value": "2300000000", "date": "2019-08-22T06:11:00.000Z"},{"value": "2300000000", "date": "1919-08-22T06:11:00.000Z"}]
-
+  "values": [{"value": "2300000000", "date": "2019-08-22T06:11:00.000Z"},
+    {"value": "2300000000", "date": "1919-08-22T06:11:00.000Z"}]
 
 }
 

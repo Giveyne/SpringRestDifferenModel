@@ -19,7 +19,7 @@ public class AirplaneAdapter implements CollateralObject {
     @Override
     public BigDecimal getValue() {
         List <AssessedValue> values = (List) airplane.getValues();
-        return  values.stream().max(Comparator.comparing(AssessedValue::getDate)).get().getValue();
+        return  values.stream().max(Comparator.comparing(AssessedValue::getAssessedDate)).get().getValue();
     }
 
     @Override

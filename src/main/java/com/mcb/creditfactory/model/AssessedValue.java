@@ -24,7 +24,7 @@ public class AssessedValue {
     @Column(name = "assessed_value")
     private BigDecimal value;
 
-    private LocalDate date;
+    private LocalDate assessedDate;
 
     @ManyToOne
     @JoinColumn(name = "car_id")
