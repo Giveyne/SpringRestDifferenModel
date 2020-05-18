@@ -14,8 +14,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "ASSESSED_VALUE")
-public class AssessedValue {
+@Table(name = "ASSESSED_VALUE_CAR")
+public class AssessedValueCar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,8 +31,4 @@ public class AssessedValue {
     @JsonIgnore
     private Car car;
 
-    @ManyToOne
-    @JoinColumn(name = "airplane_id")
-    @JsonIgnore
-    private Airplane airplane;
 }

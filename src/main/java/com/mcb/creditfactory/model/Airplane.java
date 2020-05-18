@@ -5,9 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -30,5 +28,5 @@ public class Airplane {
     private Integer seats;
 
     @OneToMany(mappedBy = "airplane", cascade = CascadeType.ALL)
-    private List<AssessedValue> values = new ArrayList<>();
+    private List<AssessedValueAirplane> airplaneValues = new ArrayList<>();
 }

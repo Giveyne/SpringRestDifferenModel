@@ -3,7 +3,8 @@ package com.mcb.creditfactory.service.airplane;
 import com.mcb.creditfactory.dto.AirplaneDto;
 import com.mcb.creditfactory.external.CollateralObject;
 import com.mcb.creditfactory.external.CollateralType;
-import com.mcb.creditfactory.model.AssessedValue;
+import com.mcb.creditfactory.model.AssessedValueAirplane;
+import com.mcb.creditfactory.model.AssessedValueCar;
 import lombok.AllArgsConstructor;
 
 import java.math.BigDecimal;
@@ -18,9 +19,13 @@ public class AirplaneAdapter implements CollateralObject {
 
     @Override
     public BigDecimal getValue() {
-        List <AssessedValue> values = (List) airplane.getValues();
-        return  values.stream().max(Comparator.comparing(AssessedValue::getAssessedDate)).get().getValue();
+        List <AssessedValueAirplane> values = airplane.getAirplaneValues();
+        return  values.stream()
+                .max(Comparator.comparing(AssessedValueAirplane::getAssessedDate))
+                .map(AssessedValueAirplane::getValue)
+                .get();
     }
+
 
     @Override
     public Short getYear() {

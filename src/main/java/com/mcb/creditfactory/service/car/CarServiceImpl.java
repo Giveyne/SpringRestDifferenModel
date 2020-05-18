@@ -1,19 +1,19 @@
 package com.mcb.creditfactory.service.car;
 
 import com.mcb.creditfactory.dto.CarDto;
-import com.mcb.creditfactory.external.ExternalApproveService;
+import com.mcb.creditfactory.external.ExternalApprove;
+import com.mcb.creditfactory.external.ExternalApproveAirplaneService;
 import com.mcb.creditfactory.model.Car;
 import com.mcb.creditfactory.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 @Service
 public class CarServiceImpl implements CarService {
 
     @Autowired
-    private ExternalApproveService approveService;
+    private ExternalApprove approveService;
 
     @Autowired
     private CarRepository carRepository;
@@ -25,7 +25,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car save(Car car) {
-        car.getValues().forEach(v -> v.setCar(car));
+        car.getCarValues().forEach(v -> v.setCar(car));
         return carRepository.save(car);
     }
 
@@ -42,7 +42,7 @@ public class CarServiceImpl implements CarService {
                 dto.getModel(),
                 dto.getPower(),
                 dto.getYear(),
-                dto.getValues()
+                dto.getCarValues()
         );
     }
 
@@ -54,7 +54,7 @@ public class CarServiceImpl implements CarService {
                 car.getModel(),
                 car.getPower(),
                 car.getYear(),
-                car.getValues()
+                car.getCarValues()
         );
     }
 

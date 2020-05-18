@@ -3,12 +3,12 @@ Content-Type: application/json
 
 {
 "type" : "car",
-  "id": "",
 "brand": "Aerobus",
 "model": "A300",
 "power" : 200,
 "year": 2020,
-  "values": [{"assessed_Date": "2019-08-22T06:11:00.000Z", "assessed_value": "230000000"}]
+  "carValues": [{"assessedDate": "2019-08-22T06:11:00.000Z", "value": "230000000"},
+    {"value": "2300000000", "assessedDate": "1919-08-22T06:11:00.000Z"}]
 
 
 }

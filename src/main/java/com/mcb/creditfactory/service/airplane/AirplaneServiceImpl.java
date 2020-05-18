@@ -1,7 +1,8 @@
 package com.mcb.creditfactory.service.airplane;
 
 import com.mcb.creditfactory.dto.AirplaneDto;
-import com.mcb.creditfactory.external.ExternalApproveService;
+import com.mcb.creditfactory.external.ExternalApprove;
+import com.mcb.creditfactory.external.ExternalApproveAirplaneService;
 import com.mcb.creditfactory.model.Airplane;
 import com.mcb.creditfactory.repository.AirplaneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import java.util.Optional;
 public class AirplaneServiceImpl implements AirplaneService {
 
     @Autowired
-    private ExternalApproveService approveService;
+    private ExternalApprove approveService;
 
     @Autowired
     private AirplaneRepository airplaneRepository;
@@ -26,7 +27,7 @@ public class AirplaneServiceImpl implements AirplaneService {
 
     @Override
     public Airplane save(Airplane airplane) {
-        airplane.getValues().forEach(v -> v.setAirplane(airplane));
+        airplane.getAirplaneValues().forEach(v -> v.setAirplane(airplane));
         return airplaneRepository.save(airplane);
     }
 
@@ -45,7 +46,7 @@ public class AirplaneServiceImpl implements AirplaneService {
                 dto.getYear(),
                 dto.getFuelCapacity(),
                 dto.getSeats(),
-                dto.getValues()
+                dto.getAirplaneValues()
         );
     }
 
@@ -59,7 +60,7 @@ public class AirplaneServiceImpl implements AirplaneService {
                 airplane.getYear(),
                 airplane.getFuelCapacity(),
                 airplane.getSeats(),
-                airplane.getValues()
+                airplane.getAirplaneValues()
         );
     }
 
